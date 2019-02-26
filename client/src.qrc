@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>bebopb.png</file>
+        <file>Bebopw.png</file>
+    </qresource>
+</RCC>

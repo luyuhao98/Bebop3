@@ -1,0 +1,106 @@
+12-20, 22:33:22 [Error  ] [                          0] Media changed
+12-20, 22:33:22 [Error  ] [                          0] Player opening
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve CRYPTO_num_locks
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve CRYPTO_set_id_callback
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve CRYPTO_set_locking_callback
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve ERR_free_strings
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve EVP_CIPHER_CTX_cleanup
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve EVP_CIPHER_CTX_init
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve sk_new_null
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve sk_push
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve sk_free
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve sk_num
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve sk_pop_free
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve sk_value
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSL_library_init
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSL_load_error_strings
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSL_get_ex_new_index
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSLv2_client_method
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSLv3_client_method
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSLv23_client_method
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSLv2_server_method
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSLv3_server_method
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSLv23_server_method
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve X509_STORE_CTX_get_chain
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve OPENSSL_add_all_algorithms_noconf
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve OPENSSL_add_all_algorithms_conf
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSLeay
+No appenders assotiated with category qt.network.ssl
+[Warning] <> QSslSocket: cannot resolve SSLeay_version
+No appenders assotiated with category qt.network.ssl
+[Warning] <> Incompatible version of OpenSSL
+12-20, 22:37:22 [Error  ] [                          0] Media changed
+12-20, 22:37:22 [Error  ] [                          0] Player opening
+12-20, 22:39:51 [Error  ] [                          0] Media changed
+12-20, 22:39:51 [Error  ] [                          0] Player opening
+[1220/224049.696798:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/224049.711985:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/224050.246140:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/224050.247079:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/224429.060887:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/224429.068970:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/224429.250047:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/224429.251133:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/224849.070322:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/224849.071321:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/224849.474239:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/224849.475168:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/225113.069769:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/225113.071891:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/225113.814269:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/225113.815310:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/225129.006998:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/225129.008157:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/225129.292821:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/225129.293765:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/225353.554620:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/225353.555792:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/225353.709284:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/225353.710342:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/225358.370961:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/225358.372137:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+[1220/225358.711239:ERROR:gl_implementation.cc(246)] Failed to load /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: /usr/lib/netease-cloud-music/lib/qcef/swiftshader/libGLESv2.so: 无法打开共享对象文件: 没有那个文件或目录
+[1220/225358.712248:ERROR:gpu_child_thread.cc(264)] Exiting GPU process due to errors during initialization
+12-20, 22:55:32 [Error  ] [                          0] Media changed
+12-20, 22:55:32 [Error  ] [                          0] Player opening
+12-20, 22:59:33 [Error  ] [                          0] Media changed
+12-20, 22:59:33 [Error  ] [                          0] Player opening
+12-20, 23:03:01 [Error  ] [                          0] Media changed
+12-20, 23:03:01 [Error  ] [                          0] Player opening
+12-20, 23:06:18 [Error  ] [                          0] Media changed
+12-20, 23:06:18 [Error  ] [                          0] Player opening
+12-20, 23:09:00 [Error  ] [                          0] Media changed
+12-20, 23:09:00 [Error  ] [                          0] Player opening
+12-20, 23:09:08 [Error  ] [                          0] Media changed
+12-20, 23:09:08 [Error  ] [                          0] Player opening
+12-20, 23:09:16 [Error  ] [                          0] Media changed
+12-20, 23:09:16 [Error  ] [                          0] Player opening
+12-20, 23:10:04 [Error  ] [                          0] Media changed
+12-20, 23:10:04 [Error  ] [                          0] Player opening
+12-20, 23:10:10 [Error  ] [                          0] Media changed
+12-20, 23:10:10 [Error  ] [                          0] Player opening

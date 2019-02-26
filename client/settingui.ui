@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>settingUi</class>
+ <widget class="QDialog" name="settingUi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>433</width>
+    <height>337</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QToolBox" name="toolBox">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="changepassword">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>415</width>
+        <height>257</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>Change Password</string>
+      </attribute>
+      <layout class="QFormLayout" name="formLayout">
+       <property name="horizontalSpacing">
+        <number>10</number>
+       </property>
+       <property name="verticalSpacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>9</number>
+       </property>
+       <property name="topMargin">
+        <number>18</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="oldpwd">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Ubuntu&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Old password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="QLineEdit" name="oldpwdline">
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QLabel" name="newpwd">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Ubuntu&quot;;</string>
+         </property>
+         <property name="text">
+          <string>New password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QLineEdit" name="newpwdline">
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="reppwd">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Ubuntu&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Repeat your new password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QLineEdit" name="reppwdline">
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Submit</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="changeprofile">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>415</width>
+        <height>257</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>Change Profile</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,2">
+       <item row="1" column="1">
+        <widget class="QComboBox" name="Genderbox">
+         <item>
+          <property name="text">
+           <string>Female</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Male</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Others</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="Gender">
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Ubuntu&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Gender</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QDateEdit" name="birthdaybox"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="birthday">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 57 12pt &quot;Ubuntu&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Birthday</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

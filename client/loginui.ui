@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>loginUi</class>
+ <widget class="QDialog" name="loginUi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>340</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>340</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>340</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <widget class="QLabel" name="logo">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>30</y>
+     <width>241</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/Bebopw.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="in_pwdlineEdit">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>280</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: rgb(0, 0, 0);
+background-color: rgb(252, 253, 149);
+</string>
+   </property>
+   <property name="text">
+    <string>123456</string>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="placeholderText">
+    <string/>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="signin">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>350</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>TakaoPGothic</family>
+     <pointsize>15</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(243, 243, 243);
+background-color: qradialgradient(spread:pad, cx:0.479, cy:0.5, radius:2, fx:0.479, fy:0.5, stop:0.195876 rgba(0, 150, 29, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   </property>
+   <property name="text">
+    <string>Sign in</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lab_in_newto">
+   <property name="geometry">
+    <rect>
+     <x>56</x>
+     <y>410</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>New to Bebop?</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lab_in_pwd">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>240</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu Condensed</family>
+     <pointsize>14</pointsize>
+     <weight>9</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 italic 14pt &quot;Ubuntu Condensed&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Password</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="tosignup">
+   <property name="geometry">
+    <rect>
+     <x>165</x>
+     <y>410</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(32, 74, 135);</string>
+   </property>
+   <property name="text">
+    <string>Create an account</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lab_in_usr">
+   <property name="geometry">
+    <rect>
+     <x>38</x>
+     <y>176</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu Condensed</family>
+     <pointsize>14</pointsize>
+     <weight>9</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 italic 14pt &quot;Ubuntu Condensed&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Username</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="in_usrlineEdit">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>210</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: rgb(0, 0, 0);
+background-color: rgb(252, 253, 149);
+alternate-background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>root</string>
+   </property>
+   <property name="placeholderText">
+    <string/>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
