@@ -1,11 +1,3 @@
-Title         : C++学习论坛系统最终版本
-Author        : 卢昱昊
-Logo          : True
-Package : [UTF8]ctex
-
-[TITLE]
-[TOC]
-
 # Feature
 1. 采用C++面向对象编程,并充分发扬了面向对象编程的诸多优势,见[#oop]
 2. 实现了用户登录,匿名登录,注册,注销,查看个人信息,修改个人信息,刷新界面,浏览帖子,访问帖子,删帖,跟帖,版主权限修改,用户管理等诸多功能
@@ -19,7 +11,7 @@ Package : [UTF8]ctex
 * Ubuntu18.04
 * QT 5.9
 
-# 功能实现 {# funcs}
+# 功能实现 
 
 ## 基本单位定义
 
@@ -31,9 +23,9 @@ Package : [UTF8]ctex
 
 ### 帖子(post)
 
-专指一个**楼层**,包括帖子id,贴页id(见[#pagelet]),正文,发帖者,赞数,踩数等信息
+专指一个**楼层**,包括帖子id,贴页id,正文,发帖者,赞数,踩数等信息
 
-### 贴页(pagelet) {#pagelet}
+### 贴页(pagelet) 
 
 一个**贴页**里有许多许多帖子,**贴页**相当于一个问题,一个贴页包括贴页id,标题,发起者,所属版块等信息.
 
@@ -81,7 +73,7 @@ Package : [UTF8]ctex
         * 管理员:在普通用户基础上,有权删除任何帖子,有权限删除用户,更新用户权限,即任命版主,创建新版块等
 
 ### 注册
-输入用户名,密码,重复密码,email即可注册.详细请见[#regcheck]
+输入用户名,密码,重复密码,email即可注册
 
 
 ### 登录
@@ -165,13 +157,13 @@ root(管理员)有权限查看用户列表.点击`user list`,打开用户列表�
 管理员可以选中任一用户,选则执行以下功能:
         
         * 删除用户: 不能删除自己(root唯一)
-        * 升级权限(任命版主): 详见特色功能[#levelup]
+        * 升级权限(任命版主)
 
 
 
 ## 特色功能
 
-### 注册检查 {#regcheck}
+### 注册检查 
 
 注册时有以下限制条件:
 1. 用户名由大小写字母,阿拉伯数字及下划线构成,长度为6-20位,且未注册过
@@ -182,12 +174,12 @@ root(管理员)有权限查看用户列表.点击`user list`,打开用户列表�
 提交表单时,若以上出现问题,则会在输入框附近,对用户进行提示
 
 
-### 游客登录方式{#guestin}
+### 游客登录方式
 登录或注册窗口点击右上角退出,显示下图:
 
 选择No则直接退出程序,选择Yes则以游客方式登录,Cancel为取消
 
-### 页 {#fatherpage}
+### 页 
 
 前端类为一个父类,整体由两个部分组成:
 
@@ -219,9 +211,9 @@ root(管理员)有权限查看用户列表.点击`user list`,打开用户列表�
                 - 便于与服务器端同步与更新
 
 ### 创建版块
-更新版主时可以选择`<New Board>`创建新的版块并成为新版块版主,详见[#levelup]
+更新版主时可以选择`<New Board>`创建新的版块并成为新版块版主
 
-### 升级权限 {#levelup}
+### 升级权限 
 
 可以提升普通用户或版主的权限:
         * 一个版块最多只有一个版主(可以没有版主),一个用户只能为一个版块的版主
@@ -246,7 +238,7 @@ root(管理员)有权限查看用户列表.点击`user list`,打开用户列表�
 
 # 设计模式优点及其体现
 
-## 面向对象特征体现 {#oop}
+## 面向对象特征体现 
 
 ### 封装性
 封装性很重要，它可以避免外部对象修改对象内部的状态，从而引起对象本身的稳定性，因此在代码编写过程中，要尽量考虑到对象的每个属性，不需要暴露的，尽量不要暴露。
@@ -267,7 +259,7 @@ root(管理员)有权限查看用户列表.点击`user list`,打开用户列表�
 * 借助`QTcpsocket`实现端与端间通信
 * 通信信息:`Json object`转成的`bit`串
 
-### 通信格式{#answer}
+### 通信格式
 
 客户端请求格式
 ```
@@ -322,10 +314,10 @@ public :
 
 采用单例模式的类如下:
 
-client 客户端控制类
-        ~ 无论有多少个前端对象,涉及到请求与应答,都来调用唯一的client
-server 服务端控制类
-        ~ 无论多少个用户在线,都是由server来执行操作.用户只是将请求提交给server,server来执行实际的操作.
+**client 客户端控制类**
+        	 无论有多少个前端对象,涉及到请求与应答,都来调用唯一的client \
+**server 服务端控制类**
+        	 无论多少个用户在线,都是由server来执行操作.用户只是将请求提交给server,server来执行实际的操作. \
 
 ## session/cookie机制
 
@@ -346,7 +338,7 @@ server 服务端控制类
 5.若用户存在,则鉴别权限.如果权限不够,返回status=0,客户端"Permission Denied" .用户的权限与信息,不能作为请求的参数,只能由后端来确认.
 6. 每次存入session时,先要查找是否用户名已经存在(该用户已经登录),若已经存在,则原session过期,生成新的session存入.这样保证了用户登录的唯一性.
 
-## 磁盘数据库/内存数据库模型 {#database}
+## 磁盘数据库/内存数据库模型 
 现代网站架构中,缓存数据库如Redis与磁盘数据库如mysql等往往同时存在,本论坛设计中,也采用如此架构.其优势在于**尽量减少IO次数,提高处理请求的速度**
 
 采用了*容器*与*SQLite*分别作为内存数据库与磁盘数据库.
@@ -367,7 +359,7 @@ server 服务端控制类
 # 具体实现
 以下为代码具体实现的部分
 
-## 数据结构{#datastruct}
+## 数据结构
 
 以下类均为实体类,成员方法均为public:
 
@@ -394,98 +386,98 @@ userinfo.cpp
 ### userinfo 用户信息类
 
 
-userinfo();
-        ~ 构造函数
-userinfo(QString id,QString password,QString email);
-        ~ 构造函数重载,登录时使用
-userinfo(QString id,QString password,int right,QString email,int level,QDate age,int gender);
-        ~ 构造函数重载,载入数据库时使用
-userinfo(QJsonObject json);
-        ~ 构造函数重载,jsonobject->userinfo
-QJsonObject tojson();
-        ~ userinfo转jsonobject
+**userinfo();** \
+        	 构造函数 \
+**userinfo(QString id,QString password,QString email);** \
+        	 构造函数重载,登录时使用 \
+**userinfo(QString id,QString password,int right,QString email,int level,QDate age,int gender);** \
+        	 构造函数重载,载入数据库时使用 \
+**userinfo(QJsonObject json);** \
+        	 构造函数重载,jsonobject->userinfo \
+**QJsonObject tojson();** \
+        	 userinfo转jsonobject \
     
-QString id;
-        ~ 用户名,唯一
-QString password
-        ~ 用户密码,存md5加密后的32位数字
-int right; 
-        ~ 用户权限 游客(default): 0 ,普通用户:1,版主:2,管理员:3 
-QString email;
-        ~ 用户邮箱地址
-QDate age;
-        ~ 用户生日
-int gender;
-        ~ 用户性别
-int level;
-        ~ 用户等级
+**QString id;** \
+        	 用户名,唯一 \
+**QString password** \
+        	 用户密码,存md5加密后的32位数字 \
+**int right; ** \
+        	 用户权限 游客(default): 0 ,普通用户:1,版主:2,管理员:3  \
+**QString email;** \
+        	 用户邮箱地址 \
+**QDate age;** \
+        	 用户生日 \
+**int gender;** \
+        	 用户性别 \
+**int level;** \
+        	 用户等级 \
 
 
 ### post 帖子类
-post();
-        ~ 构造函数
-post(QString post_id,QString page_id,QString usr_id,QString content,QTime time,long long upvotes,long long downvotes;
-        ~ 构造函数重载
-post(QString post_id,QString page_id,QString usr_id,QString content);
-        ~ 构造函数重载
-post(QJsonObject);
-        ~ 构造函数重载,json->post
-QJsonObject tojson();
-        ~ post->json
+**post();** \
+        	 构造函数 \
+**post(QString post_id,QString page_id,QString usr_id,QString content,QTime time,long long upvotes,long long downvotes;** \
+        	 构造函数重载 \
+**post(QString post_id,QString page_id,QString usr_id,QString content);** \
+        	 构造函数重载 \
+**post(QJsonObject);** \
+        	 构造函数重载,json->post \
+**QJsonObject tojson();** \
+        	 post->json \
 
-QString post_id;
-        ~ 帖子id,在服务器端通过发帖人,发帖时间,所属贴页id组成字符串经过 md5 hash 生成编码32位
-QString page_id;
-        ~ 所属贴页id，同为md5 hash 编码32位
-QString usr_id;
-        ~ 发帖者id
-QString content;
-        ~ 发帖内容
-QTime time;
-        ~ 发帖时间
-long long upvotes;
-        ~ 赞同数
-long long downvotes;
-        ~ 反对数
+**QString post_id;** \
+        	 帖子id,在服务器端通过发帖人,发帖时间,所属贴页id组成字符串经过 md5 hash 生成编码32位 \
+**QString page_id;** \
+        	 所属贴页id，同为md5 hash 编码32位 \
+**QString usr_id;** \
+        	 发帖者id \
+**QString content;** \
+        	 发帖内容 \
+**QTime time;** \
+        	 发帖时间 \
+**long long upvotes;** \
+        	 赞同数 \
+**long long downvotes;** \
+        	 反对数 \
 
 ### pagelet 贴页类
 
 贴页定义及作用详见[#pagelet]
 
-pagelet();
-        ~ 构造函数
-pagelet(QString pagelet_id,QString board_id,QString starter_id,QString title,QTime time);
-        ~ 构造函数重载
-pagelet(QJsonObject json);
-        ~ 构造函数重载  json->pagelet
-QJsonObject tojson();
-        ~ pagelet->json
+**pagelet();** \
+        	 构造函数 \
+**pagelet(QString pagelet_id,QString board_id,QString starter_id,QString title,QTime time);** \
+        	 构造函数重载 \
+**pagelet(QJsonObject json);** \
+        	 构造函数重载  json->pagelet \
+**QJsonObject tojson();** \
+        	 pagelet->json \
 
-QString pagelet_id;
-        ~ 贴页id,在服务器端通过贴页发起者,发帖时间,所属版块id组成字符串经过 md5 hash 生成编码32位
-QString board_id;
-        ~ 版块id
-QString starter_id;
-        ~ 贴页发起者
-QString title;
-        ~ 贴页标题
-QTime time;
-        ~ 发帖时间
+**QString pagelet_id;** \
+        	 贴页id,在服务器端通过贴页发起者,发帖时间,所属版块id组成字符串经过 md5 hash 生成编码32位 \
+**QString board_id;** \
+        	 版块id \
+**QString starter_id;** \
+        	 贴页发起者 \
+**QString title;** \
+        	 贴页标题 \
+**QTime time;** \
+        	 发帖时间 \
 
 ### board
-board();
-        ~ 构造函数
-board(QString,QString);
-        ~ 构造函数重载
-board(QJsonObject);
-        ~ 构造函数重载,json->board
-QJsonObject tojson();
-        ~ board->json
+**board();** \
+        	 构造函数 \
+**board(QString,QString);** \
+        	 构造函数重载 \
+**board(QJsonObject);** \
+        	 构造函数重载,json->board \
+**QJsonObject tojson();** \
+        	 board->json \
 
-QString name;
-        ~ 版块id,即版块id
-QString manager_id;
-        ~ 版主id
+**QString name;** \
+        	 版块id,即版块id \
+**QString manager_id;** \
+        	 版主id \
 
 
 
@@ -499,34 +491,34 @@ QString manager_id;
 ### 前端
 前端涉及各类如下:
 
-loginUi
-        ~登录Ui类
-signupUi
-        ~注册Ui类
-mainwin
-        ~主窗口Ui类
-tabUi
-        ~页Ui类
-homepageUi
-        ~主页Ui类
-hpmainUi
-        ~主页正文Ui类
-pageUi
-        ~帖页Ui类
-postUi
-        ~贴字Ui类
-commentpostUi
-        ~评论框Ui类
-userlistUi
-        ~用户列表页Ui类
-usrlsitmainUi
-        ~用户列表正文去Ui类
-promotebmUi
-        ~更改权限Ui类
-settingUi
-        ~更改用户信息Ui类
+**loginUi** \
+        	登录Ui类 \
+**signupUi** \
+        	注册Ui类 \
+**mainwin** \
+        	主窗口Ui类 \
+**tabUi** \
+        	页Ui类 \
+**homepageUi** \
+        	主页Ui类 \
+**hpmainUi** \
+        	主页正文Ui类 \
+**pageUi** \
+        	帖页Ui类 \
+**postUi** \
+        	贴字Ui类 \
+**commentpostUi** \
+        	评论框Ui类 \
+**userlistUi** \
+        	用户列表页Ui类 \
+**usrlsitmainUi** \
+        	用户列表正文去Ui类 \
+**promotebmUi** \
+        	更改权限Ui类 \
+**settingUi** \
+        	更改用户信息Ui类 \
 
-### 前端的继承与多态{#front}
+### 前端的继承与多态
 
 在使用Qt的过程中,前端的各种类间的调用往往比后端的逻辑更为复杂与繁琐.于是,将面向对象的方法运用与前端,极大地提高了开发前端的效率,提高了程序的可扩展性.
 
@@ -547,85 +539,85 @@ settingUi
 
 ### client控制类实现
 
-private:
+**private:** \
 
-userinfo usr;
-        ~用户信息, 本地不保存密码
-QMap\<QString,QVector\<pagelet>> homepage;
-        ~主页信息
-QString cookie;
-        ~存储cookie
-QTcpSocket *tcp;
-        ~链接
+**userinfo usr;** \
+        	用户信息, 本地不保存密码 \
+**QMap\<QString,QVector\<pagelet>> homepage;** \
+        	主页信息 \
+**QString cookie;** \
+        	存储cookie \
+**QTcpSocket *tcp;** \
+        	链接 \
 
-public:
+**public:** \
 
-userinfo * getinfo();
-        ~ 获取用户信息
-QMap\<QString,QVector\<pagelet>> *gethomepage();
-        ~ 获取主页
-bool guestin();
-        ~ 游客登录
-int login(QString,QString);
-        ~ 登录
-int  signup (QString usr, QString, QString;
-        ~ 注册
-int signupusrcheck(QString);
-        ~ 注册时用户名验证
-int signupemailcheck(QString email);
-        ~ 注册时邮箱验证
-int signuppwdcheck(QString pwd);
-        ~ 注册时密码验证
-void updatehomepage();
-        ~ 从服务端更新首页
-bool updateuser();
-        ~ 从服务端更新用户信息
-QVector\<post> getposts(QString);
-        ~ 下载帖子
-QVector\<board> getboards();
-        ~ 下载版块信息
-QVector\<userinfo> getuserlist();
-        ~ 下载用户列表
-int  logout ();
-        ~ 注销
-bool deleteusr(QString);
-        ~ 删除用户
-int uploadpost(post p);
-        ~ 登录
-bool changevote(QString post_id,bool up);
-        ~ 改变帖子票数
-int createpage(pagelet,post);
-        ~ 创建新的帖页
-int deletepage(QString);
-        ~ 删除贴页
-int changebm(QString board,QString usr);
-        ~ 改换版主
-int changepw(QString oldpwd,QString newpwd;
-        ~ 改换密码
-int changeag(QDate,int);//change age andgender
-        ~ 改换年龄,性别
-QJsonObject callback(QJsonObject json);
-        ~ 发送请求,接受响应
+**userinfo * getinfo();** \
+        	 获取用户信息 \
+**QMap\<QString,QVector\<pagelet>> *gethomepage();** \
+        	 获取主页 \
+**bool guestin();** \
+        	 游客登录 \
+**int login(QString,QString);** \
+        	 登录 \
+**int  signup (QString usr, QString, QString;** \
+        	 注册 \
+**int signupusrcheck(QString);** \
+        	 注册时用户名验证 \
+**int signupemailcheck(QString email);** \
+        	 注册时邮箱验证 \
+**int signuppwdcheck(QString pwd);** \
+        	 注册时密码验证 \
+**void updatehomepage();** \
+        	 从服务端更新首页 \
+**bool updateuser();** \
+        	 从服务端更新用户信息 \
+**QVector\<post> getposts(QString);** \
+        	 下载帖子 \
+**QVector\<board> getboards();** \
+        	 下载版块信息 \
+**QVector\<userinfo> getuserlist();** \
+        	 下载用户列表 \
+**int  logout ();** \
+        	 注销 \
+**bool deleteusr(QString);** \
+        	 删除用户 \
+**int uploadpost(post p);** \
+        	 登录 \
+**bool changevote(QString post_id,bool up);** \
+        	 改变帖子票数 \
+**int createpage(pagelet,post);** \
+        	 创建新的帖页 \
+**int deletepage(QString);** \
+        	 删除贴页 \
+**int changebm(QString board,QString usr);** \
+        	 改换版主 \
+**int changepw(QString oldpwd,QString newpwd;** \
+        	 改换密码 \
+**int changeag(QDate,int);//change age andgender** \
+        	 改换年龄,性别 \
+**QJsonObject callback(QJsonObject json);** \
+        	 发送请求,接受响应 \
 
 ## 服务端
 
 ### 数据库
 服务端负责与数据库交互.数据库采用内存数据库*容器*+磁盘数据库*SQlite*两种.其机制与优势详见[#database].相关函数如下:
 
-void initdatabase();
-        ~初始化数据库.由于单例模式,只需要一次登入数据库.若第一次运行服务端,数据库不存在,则自动生成默认数据库,写入root权限
-void loaduserinfos();
-        ~读取sqlite中users表到users容器
-void loadposts();
-        ~按时间排序,读取sqlite中posts表到posts容器
-void loadpagelets();
-        ~按时间排序,读取sqlite中pagelets表到users容器
-void loadboard();
-        ~读取sqlite中boards表到boards容器
-void replacebase();
-        ~更新sqlite数据库
-server << user/post/pagelet/board
-        ~实现运算符<<重载,极大地方便了对于数据库的读取操作.
+**void initdatabase();** \
+        	初始化数据库.由于单例模式,只需要一次登入数据库.若第一次运行服务端,数据库不存在,则自动生成默认数据库,写入root权限 \
+**void loaduserinfos();** \
+        	读取sqlite中users表到users容器 \
+**void loadposts();** \
+        	按时间排序,读取sqlite中posts表到posts容器 \
+**void loadpagelets();** \
+        	按时间排序,读取sqlite中pagelets表到users容器 \
+**void loadboard();** \
+        	读取sqlite中boards表到boards容器 \
+**void replacebase();** \
+        	更新sqlite数据库 \
+**server << user/post/pagelet/board** \
+        	实现运算符<<重载,极大地方便了对于数据库的读取操作. \
 
 ### 服务端窗口
 
@@ -638,80 +630,81 @@ fakedialog类负责显示当前服务端Console.具备以下功能:
 5. (可拓展选项),将以上显示信息存为log日志文件
 6. 选择关闭服务器
 
-server类signals:
+server类signals: \
     
-void print(QString);
-        ~console打印信号
-void connum(int);
-        ~更新在线人数信号
+**void print(QString);**
+        	console打印信号 \
+**void connum(int);**
+        	更新在线人数信号 \
 
 
 ### cookie/session
-void sessionadd (userinfo*);
-        ~ 将用户信息存入session,若用户存在则更新session
-userinfo * cookie2usr(QString cookie)
-        ~ 通过cookie得到用户信息
+
+**void sessionadd (userinfo*);**
+        	 将用户信息存入session,若用户存在则更新session \
+**userinfo * cookie2usr(QString cookie)**
+        	 通过cookie得到用户信息 \
 
 
 ### 服务器接收应答请求
 
 **private slots:**
 
-void newConnect();
-        ~接收新连接信号槽,tcpsocket绑定
-void disconnect(int);
-        ~断开链接信号槽,通过map与tcpsocket绑定
-void readMsg(int);
-        ~读取信息信号槽,通过map与tcpsocket绑定
+**void newConnect();**
+        	接收新连接信号槽,tcpsocket绑定 \
+**void disconnect(int);**
+        	断开链接信号槽,通过map与tcpsocket绑定 \
+**void readMsg(int);**
+        	读取信息信号槽,通过map与tcpsocket绑定 \
 
 **private:**
 
-void inittcpserver();
-        ~初始化tcpserver,初始化tcpsocket容器,开始监听端口
-void connumfresh();
-        ~ 更新人数
+**void inittcpserver();**
+        	初始化tcpserver,初始化tcpsocket容器,开始监听端口 \
+**void connumfresh();**
+        	 更新人数 \
 
 **public:**
 
-QJsonObject login(QJsonObject);
-        ~ 处理登录请求
-QJsonObject signup(QJsonObject);
-        ~ 处理注册请求
-QJsonObject signupusrcheck(QJsonObject);
-        ~ 处理注册用户名检测请求
-QJsonObject signuppwdcheck(QJsonObject);
-        ~ 处理注册密码检测请求
-QJsonObject signupemailcheck(QJsonObject);
-        ~ 处理注册邮件格式检测请求
-QJsonObject gethomepage();
-        ~ 处理获取主页请求
-QJsonObject getposts(QJsonObject);
-        ~ 处理获取帖子请求
-QJsonObject getboards();
-        ~ 处理获取版块列表请求
+**QJsonObject login(QJsonObject);**
+        	 处理登录请求 \
+**QJsonObject signup(QJsonObject);**
+        	 处理注册请求 \
+**QJsonObject signupusrcheck(QJsonObject);**
+        	 处理注册用户名检测请求 \
+**QJsonObject signuppwdcheck(QJsonObject);**
+        	 处理注册密码检测请求 \
+**QJsonObject signupemailcheck(QJsonObject);**
+        	 处理注册邮件格式检测请求 \
+**QJsonObject gethomepage();**
+        	 处理获取主页请求 \
+**QJsonObject getposts(QJsonObject);**
+        	 处理获取帖子请求 \
+**QJsonObject getboards();**
+        	 处理获取版块列表请求 \
 (*need cookie to check right:*)
-QJsonObject getdateuser(QJsonObject params);
-        ~ 处理获取用户信息请求,只能获取本用户
-QJsonObject getuserlist(QJsonObject);
-        ~ 处理获取用户列表请求,只有管理员可以
-QJsonObject logout(QJsonObject params);
-        ~ 处理注销请求,只注销本用户
-QJsonObject deleteusr(QJsonObject params);
-        ~ 处理删除用户请求,只有管理员可以
-QJsonObject uploadpost(QJsonObject params);
-        ~ 处理发帖请求,需要个人id.根据发帖人与发帖时间贴页id,生成帖子id.将帖子信息存入数据库
-QJsonObject changevote(QJsonObject params);
-        ~ 处理赞同/反对请求,需要id
-QJsonObject createpage(QJsonObject params);
-        ~ 处理创建贴页请求.需要个人id.根据发帖人发帖时间与版块名,生成贴页id,存储贴页
-QJsonObject deletepage(QJsonObject params);
-        ~ 处理删除贴页请求.需要鉴定权限.
-QJsonObject changebm(QJsonObject params);
-        ~ 处理改变版主,需要管理员权限
-QJsonObject changepw(QJsonObject params);
-        ~ 处理改换密码请求,需要个人验证
-QJsonObject changeag(QJsonObject params);
-        ~ 处理设置生日,性别请求,需要个人验证
+**QJsonObject getdateuser(QJsonObject params);**
+        	 处理获取用户信息请求,只能获取本用户 \
+**QJsonObject getuserlist(QJsonObject);**
+        	 处理获取用户列表请求,只有管理员可以 \
+**QJsonObject logout(QJsonObject params);**
+        	 处理注销请求,只注销本用户 \
+**QJsonObject deleteusr(QJsonObject params);**
+        	 处理删除用户请求,只有管理员可以 \
+**QJsonObject uploadpost(QJsonObject params);**
+        	 处理发帖请求,需要个人id.根据发帖人与发帖时间贴页id,生成帖子id.将帖子信息存入数据库 \
+**QJsonObject changevote(QJsonObject params);**
+        	 处理赞同/反对请求,需要id \
+**QJsonObject createpage(QJsonObject params);**
+        	 处理创建贴页请求.需要个人id.根据发帖人发帖时间与版块名,生成贴页id,存储贴页 \
+**QJsonObject deletepage(QJsonObject params);**
+        	 处理删除贴页请求.需要鉴定权限. \
+**QJsonObject changebm(QJsonObject params);**
+        	 处理改变版主,需要管理员权限 \
+**QJsonObject changepw(QJsonObject params);**
+        	 处理改换密码请求,需要个人验证 \
+**QJsonObject changeag(QJsonObject params);**
+        	 处理设置生日,性别请求,需要个人验证 \
 
 # 产品迭代
 
@@ -745,8 +738,4 @@ QJsonObject changeag(QJsonObject params);
 3. 服务端内存数据库改为`Redis`等流行的内存数据库,并将增删减改等操作交由数据库完成
 4. 添加系统消息与好友功能,完善帖子排名系统,与用户等级系统.
 5. 优化前端界面,尽可能用*页*来代替Dialog,使之更加趋近于流行的网站视图
-6. 提高安全性,采用https进行通信.
-
-时光荏苒,转眼已经是2019.愿这些宝贵的经验能助我前行.同时,感谢老师与助教的辛勤付出,愿大家都有一个美好的2019.
-
 
